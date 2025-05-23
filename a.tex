@@ -1,0 +1,1489 @@
+\documentclass[12pt]{article}
+\usepackage{array}
+\usepackage{geometry}
+% Package imports
+\usepackage[utf8]{vietnam} 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{float, graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{enumitem} % for custom list labels
+\usepackage{pifont}   % for \ding{43} icons
+\usepackage{tikz}     % for drawing the frame border
+\usepackage{fancyhdr} % for custom headers and footers
+\usepackage{tocloft}  % for table of contents customization
+\usepackage{xcolor}   % for colored text
+
+% Customize table of contents
+\renewcommand{\cftsecfont}{\bfseries}        % Section titles in bold
+\renewcommand{\cftsecpagefont}{\bfseries}    % Section page numbers in bold
+\renewcommand{\cftsubsecindent}{1.5em}       % Indentation for subsections
+\renewcommand{\cftsubsubsecindent}{3em}      % Indentation for subsubsections
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Add dots for sections
+
+% Document information
+\title{ \textbf{BÀI TẬP LỚN \\KIẾN TRÚC MÁY TÍNH}}
+\author{Lê Hiển Long}
+\date{2025--15--5}
+
+% Define a command for the fancy frame border
+\newcommand{\titleframeborder}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Define colors
+    \definecolor{framecolor}{RGB}{0, 51, 102}
+    
+    % Outer frame
+    \draw[framecolor, line width=1.5pt] 
+      ([shift={(1cm,1cm)}]current page.south west) 
+      rectangle 
+      ([shift={(-1cm,-1cm)}]current page.north east);
+    
+    % Inner frame
+    \draw[framecolor, line width=0.8pt] 
+      ([shift={(1.5cm,1.5cm)}]current page.south west) 
+      rectangle 
+      ([shift={(-1.5cm,-1.5cm)}]current page.north east);
+    
+    % Corner decorations
+    \foreach \corner in {north east, north west, south east, south west} {
+      \draw[framecolor, line width=1pt] 
+        ([shift={(1.25cm,1.25cm)}]current page.\corner) -- 
+        ([shift={(2cm,2cm)}]current page.\corner);
+      \draw[framecolor, line width=1pt] 
+        ([shift={(1.5cm,1.25cm)}]current page.\corner) -- 
+        ([shift={(1.25cm,1.5cm)}]current page.\corner);
+    }
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+% Create a custom title page with frame border
+\begin{titlepage}
+\thispagestyle{empty} % Remove default page numbering
+\titleframeborder % Add the frame border
+
+\vspace*{2cm}
+\begin{center}
+\Huge\bfseries BÀI TẬP LỚN\\[0.5cm]
+\Huge\bfseries KIẾN TRÚC MÁY TÍNH\\[2cm]
+
+\large\textbf{Sinh viên:} Lê Hiển Long\\[0.3cm]
+\large\textbf{Lớp:} D23CQCN10-B\\[0.3cm]
+\large\textbf{Mã sinh viên:} B23DCCN500\\[0.3cm]
+\large\textbf{Nhóm 6 - Lớp: KTMT 09}\\[1.5cm]
+
+\Large\textbf{Học Viện Công Nghệ Bưu Chính Viễn Thông}\\[1cm]
+\large\today
+\end{center}
+\end{titlepage}
+
+% Add Table of Contents with fancy styling
+\cleardoublepage % Start on a new page
+\thispagestyle{empty} % Remove page number
+
+
+\begin{center}
+  \Large\bfseries\textcolor{blue}{MỤC LỤC}
+\end{center}
+\vspace{0.5cm}
+
+\renewcommand{\contentsname}{} % Remove default "Contents" heading
+\setcounter{tocdepth}{3} % Show up to subsubsection in TOC
+\tableofcontents
+
+\clearpage
+\setcounter{page}{2} % Reset page numbering after TOC
+\section{Bài tập cá nhân}
+
+\subsection{Bài số 1: Lập trình hợp ngữ Assembly}
+
+\subsubsection{Câu 2:} 
+Viết chương trình hợp ngữ Assembly cho phép nhập 1 ký tự và in ra màn hình ký tự đó.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/code_2.png}
+  \caption{Mã nguồn}
+  \label{fig:code_2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/result_code_2.png}
+  \caption{Kết quả chạy}
+  \label{fig:result_code_2}
+\end{figure}
+\cleardoublepage
+\subsubsection{Câu 3:}
+Viết chương trình hợp ngữ Assembly cho phép nhập 1 chuỗi ký tự và in ra màn hình chuỗi ký tự đó.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/flow_3.png}
+  \caption{Sơ đồ thuật toán}
+  \label{fig:flow_3}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/code_3.png}
+  \caption{Mã nguồn}
+  \label{fig:code_3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/result_code_3.png}
+  \caption{Kết quả chạy}
+  \label{fig:result_code_3}
+\end{figure}
+
+\subsubsection{Câu 4:}
+Viết chương trình hợp ngữ Assembly cho phép nhập 1 ký tự viết thường và in ra màn hình chữ hoa của ký tự đó.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/flow_4.png}
+  \caption{Sơ đồ thuật toán}
+  \label{fig:flow_4}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/code_4.png}
+  \caption{Mã nguồn}
+  \label{fig:code_4}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/result_code_4.png}
+  \caption{Kết quả chạy}
+  \label{fig:result_code_4}
+\end{figure}
+\subsection{Bài số 2: Thực hành phân tích khảo sát bộ nhớ}
+
+\subsubsection{Khảo sát cấu hình của máy và hệ thống bộ nhớ của máy đang sử dụng }
+
+\paragraph{} 
+Khảo sát cấu hình của máy và hệ thống bộ nhớ của máy đang sử dụng. Sử dụng phần mềm CPU-Z 64-bit v2.15.0x64.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{pics/app_cpu_z.png}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{pics/cpu.png}
+  \end{subfigure}
+  \caption{\textbf{Thông số CPU} }
+  \label{fig:cpu}
+\end{figure}
+\begin{center}
+  Cpu hiện tại là Ryzen 7 - 5800H có 8 nhân 16 luồng. Có TDP max là 45W
+\end{center}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/ram.png}
+  \caption{\textbf{Ram}}
+  \label{fig:ram}
+\end{figure}
+\begin{center}
+  Ram hiện tại có 16GB, chạy dual channel 64bit, loại DDR4
+\end{center}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/disk.png}
+  \caption{Bộ nhớ ngoài}
+  \label{fig:disk}
+\end{figure}
+\begin{center}
+Bộ nhớ ngoài gồm có 2 ổ đĩa, 1 ổ 512GB và 1 ổ 1TB được hiển thị bằng Disk Management có kiểu định dạng là NTFS
+\end{center}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/io.png}
+  \caption{Thiết bị vào ra}
+  \label{fig:io}
+\end{figure}
+
+\subsubsection{Dùng công cụ Debug khảo sát nội dung các thanh ghi IP, DS, ES, SS, CS, BP, SP}
+
+\begin{itemize}
+  \item Công cụ sử dụng: emu8086 microprocessor emulator.
+  \item Mã nguồn sử dụng : Bài 3 
+  \item Các bước thực hiện:
+  \begin{itemize}
+    \item Mở file .asm bằng phần mềm trên.
+    \item Chọn \textit{Emulate} trên thanh công cụ rồi chọn nút \textit{Debug} nằm cuối của cửa sổ vừa mở ra.
+    \item Chạy \textit{Single Step} để xem kết quả debug từng mã lệnh từ đầu đến cuối.
+ \begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{pics/debug_1.png}
+    \caption{Debug step 1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{pics/debug_3.png}
+    \caption{Debug step 3}
+  \end{subfigure}
+  
+  \vspace{0.5em}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{pics/debug_6.png}
+    \caption{Debug step 6}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{pics/debug_10.png}
+    \caption{Debug step 10}
+  \end{subfigure}
+
+  \vspace{0.5em}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \includegraphics[width=\linewidth]{pics/debug_15.png}
+    \caption{Debug step 15}
+  \end{subfigure}
+  
+  \caption{Các giai đoạn khác nhau trong quá trình debug chương trình bằng emu8086}
+  \label{fig:debug_steps}
+\end{figure}
+
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Giải thích nội dung các thanh ghi. Trên cơ sở đó giải thích cơ chế quản lý bộ nhớ của hệ thống trong trường hợp cụ thể này}
+
+\begin{itemize}
+  \item Khi chương trình bắt đầu chạy, hệ điều hành tự động khởi tạo các thanh ghi, vùng nhớ và cấp phát không gian địa chỉ cho chương trình.
+  \item Tương ứng với các câu lệnh trong mã nguồn, nội dung các thanh ghi có thể thay đổi hoặc không:
+  \begin{itemize}[label=\ding{43}]
+    \item \textbf{\underline{IP (Instruction Pointer):}}
+    \begin{itemize}
+      \item IP là thanh ghi trỏ đến địa chỉ của lệnh tiếp theo sẽ được thực thi trong mã máy.
+      \item Khi một chương trình được thực thi, IP được cập nhật để trỏ đến lệnh tiếp theo trong mã nguồn.
+    \end{itemize}
+
+    \item \textbf{\underline{DS (Data Segment) và SI (Source Index):}}
+    \begin{itemize}
+      \item DS là thanh ghi chỉ đến phân đoạn dữ liệu, nơi dữ liệu chương trình được lưu trữ.
+      \item SI thường được sử dụng trong các phép toán dữ liệu và là một trong các thanh ghi chỉ địa chỉ.
+      \item Khi chương trình yêu cầu truy cập dữ liệu từ bộ nhớ, DS và SI thường được sử dụng để xác định vị trí của dữ liệu trong bộ nhớ.
+    \end{itemize}
+
+    \item \textbf{\underline{SS (Stack Segment) và BP (Base Pointer):}}
+    \begin{itemize}
+      \item SS là thanh ghi chỉ đến phân đoạn ngăn xếp (stack segment), nơi các giá trị cục bộ và địa chỉ của các hàm được lưu trữ.
+      \item BP thường được sử dụng để trỏ đến địa chỉ cơ sở của ngăn xếp.
+      \item Ngăn xếp được dùng để lưu giá trị trung gian và địa chỉ trả về từ các hàm con trong quá trình thực thi.
+    \end{itemize}
+
+    \item \textbf{\underline{SP (Stack Pointer):}}
+    \begin{itemize}
+      \item SP là thanh ghi chỉ đến đỉnh của ngăn xếp.
+      \item Khi dữ liệu được đẩy (push) hoặc rút (pop) khỏi ngăn xếp, SP sẽ thay đổi để trỏ đến vị trí mới.
+      \item SP cũng dùng để cấp phát không gian mới trong ngăn xếp.
+    \end{itemize}
+  \end{itemize}
+
+
+  \item Diễn giải nội dung của các câu lệnh trong mã nguồn và ảnh hưởng đến các thanh ghi.
+  \begin{itemize}
+    \item Trong cơ chế quản lý bộ nhớ, thanh ghi DS (Data Segment Register) được sử dụng
+để trỏ đến vùng nhớ lưu trữ dữ liệu của chương trình. Bằng cách di chuyển giá trị
+của AX vào DS, chương trình xác định vùng nhớ lưu trữ dữ liệu của nó. Khi nhập
+chuỗi từ bàn phím, dịch vụ hệ thống sẽ lưu trữ chuỗi nhập vào đúng vào vùng
+nhớ mà DS trỏ tới, nghĩa là str. Sau đó, chương trình sử dụng các dịch vụ hệ thống
+để in ra màn hình thông báo và chuỗi đã nhập
+  \end{itemize}
+\end{itemize}
+
+
+\section{Bài tập lớn}
+\subsection{Giới thiệu đề tài}
+\begin{itemize}
+  \item Trò chơi "Snake" là một trong những trò chơi cổ điển phổ biến nhất trong lịch sử máy tính và điện thoại di động. Đề tài này triển khai trò chơi Snake sử dụng ngôn ngữ hợp ngữ (Assembly) và chạy trên môi trường giả lập Emu8086. Việc xây dựng trò chơi giúp sinh viên rèn luyện khả năng lập trình bậc thấp, hiểu rõ về cơ chế vận hành bộ nhớ, thanh ghi và xử lý ngắt trong vi xử lý 8086.
+  \item Cách chơi:
+Trong trò chơi này, người chơi điều khiển một con rắn di chuyển trên màn hình để ăn các ký tự xuất hiện theo thứ tự định sẵn.
+Người chơi sẽ bị trừ số lần chơi khi:
+\begin{itemize}
+  \item 
+Tự đâm chính mình hoặc đâm vào tường.
+\item Nhặt sai thứ tự đã cho.
+\item Người chơi thua khi: Hết lượt chơi.
+
+\end{itemize}
+\item Người chơi thắng khi: Nhặt đúng thứ tự đã cho và còn lượt chơi
+\end{itemize}
+\subsection{Miêu tả chương trình }
+Chương trình được chia làm các phần chính:
+
+
+
+
+\subsubsection*{Khởi tạo và thiết lập ban đầu}
+\begin{itemize}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/start.png}
+\end{figure}
+    \item \textbf{start:} \\
+    Nhãn \texttt{start} đánh dấu điểm bắt đầu của chương trình.
+
+    \item \textbf{mov ah, 1} \\
+    Đặt \texttt{AH = 1}, yêu cầu ngắt \texttt{21h} để đọc một ký tự từ bàn phím mà không cần đợi nhấn Enter.
+
+    \item \textbf{int 21h} \\
+    Gọi ngắt \texttt{21h}, đây là ngắt hệ thống DOS, sẽ đọc một ký tự từ bàn phím và đặt nó vào thanh ghi \texttt{AL}.
+
+    \item \textbf{mov ax, data} \\
+    Đặt giá trị của \texttt{data} vào thanh ghi \texttt{AX}. \texttt{data} có thể là một địa chỉ dữ liệu, chẳng hạn như địa chỉ của đoạn mã hoặc cấu trúc dữ liệu trong bộ nhớ.
+
+    \item \textbf{mov ds, ax} \\
+    Đặt thanh ghi \texttt{DS} (Data Segment) bằng giá trị của \texttt{AX}, giúp chỉ định đoạn dữ liệu trong bộ nhớ.
+
+    \item \textbf{mov ax, 0b800h} \\
+    Đặt giá trị \texttt{0b800h} vào thanh ghi \texttt{AX}, đây là địa chỉ của bộ đệm video màu trong bộ nhớ (màn hình trong chế độ văn bản).
+
+    \item \textbf{mov es, ax} \\
+    Đặt thanh ghi \texttt{ES} (Extra Segment) bằng giá trị của \texttt{AX}, giúp truy cập vào bộ đệm video.
+
+    \item \textbf{cld} \\
+    Thiết lập cờ Direction Flag (\texttt{DF}) thành 0, điều này có nghĩa là các lệnh chuỗi (string operations) sẽ xử lý từ trái sang phải (tiến).
+\end{itemize}
+\subsubsection*{Ẩn con trỏ chuột}
+\begin{itemize}
+    \item \textbf{mov ah, 1} \\
+    Đặt \texttt{AH = 1} để chuẩn bị cho ngắt \texttt{10h} (hàm video BIOS) dùng để điều khiển con trỏ chuột.
+
+    \item \textbf{mov ch, 2Bh} \\
+    Đặt giá trị \texttt{2Bh} vào thanh ghi \texttt{CH}, đây là mã lệnh để ẩn con trỏ chuột trong chế độ văn bản.
+
+    \item \textbf{mov cl, 0Bh} \\
+    Đặt giá trị \texttt{0Bh} vào thanh ghi \texttt{CL}, đây là tham số được yêu cầu cho ngắt \texttt{10h}, chỉ định yêu cầu ẩn con trỏ.
+
+    \item \textbf{int 10h} \\
+    Gọi ngắt \texttt{10h}, yêu cầu BIOS ẩn con trỏ chuột.
+\end{itemize}
+
+
+
+
+
+\subsubsection*{Hiển thị menu chính}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \texttt{call main-menu} \\
+    Gọi thủ tục \texttt{main-menu} để vẽ hoặc hiển thị menu chính của trò chơi hoặc ứng dụng.
+ \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/mainmenu1.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/mainmenu2.png}
+\end{figure}
+    Menu chính được hiển thị trên màn hình văn bản và bao gồm:
+    \begin{itemize}
+        \item Tên nhóm
+        \item Luật chơi
+        \item Hướng dẫn điều khiển
+        \item Thông báo bắt đầu trò chơi
+    \end{itemize}
+
+    Sau đó chương trình sẽ đợi người chơi nhấn một phím bất kỳ để bắt đầu trò chơi.
+
+    \item In dòng đầu tiên với chuỗi \texttt{main1 = "Nhom 6"}:
+    
+    \begin{itemize}
+        \item \texttt{mov di, 18Ah}
+        \item \texttt{lea si, main1}
+        \item \texttt{mov cx, 6}
+    \end{itemize}
+
+    Giải thích:
+    \begin{itemize}
+        \item \texttt{SI} trỏ đến chuỗi \texttt{main1}.
+        \item \texttt{DI = 018Ah} là vị trí trong bộ nhớ video để hiển thị dòng chữ.
+        \item \texttt{CX = 6} là độ dài của chuỗi.
+    \end{itemize}
+
+    Tiếp theo là đoạn lặp để sao chép chuỗi ra màn hình:
+
+    \begin{itemize}
+        \item \texttt{lopem1:}
+        \item \texttt{\ \ \ \ movsb}
+        \item \texttt{\ \ \ \ inc di}
+        \item \texttt{\ \ \ \ loop lopem1}
+    \end{itemize}
+
+    → Sao chép 6 ký tự từ \texttt{main1} sang màn hình tại địa chỉ bắt đầu \texttt{0B800:018A}.
+
+    \item Các phần tiếp theo được thực hiện tương tự với \texttt{main2}, \texttt{main3}, ..., đến \texttt{main9} để hiển thị đầy đủ nội dung menu.
+
+    \item Chờ người chơi nhấn một phím:
+
+    \begin{itemize}
+        \item \texttt{mov ah, 7}
+        \item \texttt{int 21h}
+    \end{itemize}
+
+    → Đợi người chơi ấn một phím bất kỳ. Không cần nhấn Enter (sử dụng chức năng AH = 7 của INT 21h).
+
+    \item Xoá toàn bộ menu sau khi người chơi đã nhấn phím:
+
+    \begin{itemize}
+        \item \texttt{call clearall}
+    \end{itemize}
+
+    → Gọi thủ tục \texttt{clearall} để xóa màn hình, chuẩn bị vào phần chơi của game.
+\end{enumerate}
+
+
+
+
+\subsubsection*{Khởi tạo các ký tự và khung}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \texttt{startag:} \\
+    Nhãn \texttt{startag} đánh dấu điểm bắt đầu của phần mã khởi tạo trò chơi hoặc màn hình.
+
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/blid.png}
+\end{figure}
+    \item \texttt{call bild} \\
+    Gọi thủ tục \texttt{bild} để khởi tạo các ký tự và vẽ khung trên màn hình.
+
+    Tiếp theo:
+    
+    \texttt{call border} \\
+    Gọi thủ tục \texttt{border} để vẽ khung xung quanh màn hình chơi (bao gồm viền trái, phải, trên, dưới).
+
+    \item Hiển thị dòng \texttt{"Lives:"} ở góc trên màn hình:
+    
+    \begin{itemize}
+        \item \texttt{lea si, hlths} \\
+        \texttt{SI} trỏ đến chuỗi chứa "Lives:" và các biểu tượng trái tim.
+        
+        \item \texttt{mov di, 0} \\
+        Đặt \texttt{DI = 0}, bắt đầu sao chép từ đầu màn hình.
+        
+        \item \texttt{mov cx, 9} \\
+        Đặt \texttt{CX = 9}, sao chép 9 ký tự (bao gồm cả chữ và biểu tượng trái tim).
+        
+        \item \texttt{loph:}
+        \begin{itemize}
+            \item \texttt{movsb} \\
+            Chuyển từng byte từ \texttt{[SI]} đến \texttt{[ES:DI]}.
+            \item \texttt{inc di} \\
+            Tăng \texttt{DI} để di chuyển đến cột tiếp theo trên màn hình.
+            \item \texttt{loop loph} \\
+            Lặp cho đến khi đủ 9 ký tự.
+        \end{itemize}
+        → Kết quả là dòng "Lives:" sẽ xuất hiện ở góc trên bên trái của màn hình.
+    \end{itemize}
+
+    \item Hiển thị tên nhóm "Nhom 6" ở góc trên bên phải màn hình:
+    
+    \begin{itemize}
+        \item \texttt{lea si, main1} \\
+        \texttt{SI} trỏ đến chuỗi "Nhom 6".
+        
+        \item \texttt{mov di, 94h} \\
+        Vị trí màn hình để hiển thị tên nhóm (góc trên bên phải).
+        
+        \item \texttt{mov cx, 6} \\
+        Độ dài chuỗi = 6 ký tự.
+        
+        \item \texttt{loph1:}
+        \begin{itemize}
+            \item \texttt{movsb} \\
+            Sao chép từng byte từ \texttt{SI} đến \texttt{DI}.
+            \item \texttt{inc di} \\
+            Tăng \texttt{DI} để di chuyển đến cột tiếp theo.
+            \item \texttt{loop loph1} \\
+            Lặp cho đến khi đủ 6 ký tự.
+        \end{itemize}
+        → Dòng "Nhom 6" sẽ hiển thị ở góc trên bên phải màn hình.
+    \end{itemize}
+
+    \item Hiển thị đầu rắn tại vị trí ban đầu (trung tâm màn hình):
+    
+    \begin{itemize}
+        \item \texttt{xor dx, dx} \\
+        Đặt \texttt{DX} = 0.
+        
+        \item \texttt{mov di, sadd} \\
+        \texttt{DI} trỏ đến địa chỉ của đầu rắn (ví dụ: 07D2h).
+        
+        \item \texttt{mov dl, snake} \\
+        \texttt{DL} lấy ký tự đầu của rắn: \texttt{'S'}.
+        
+        \item \texttt{es: mov [di], dl} \\
+        Ghi ký tự 'S' lên bộ nhớ màn hình tại vị trí đầu rắn.
+    \end{itemize}
+    → Hiển thị đầu rắn tại vị trí ban đầu (trung tâm màn hình).
+    
+    \item Đặt các ký tự mục tiêu (n, a, k, e) vào các vị trí cụ thể:
+    
+    \begin{itemize}
+        \item \texttt{es: mov [0378h], 'n'} \\
+        Đặt ký tự 'n' vào địa chỉ 0378h.
+        
+        \item \texttt{es: mov [0DC4h], 'a'} \\
+        Đặt ký tự 'a' vào địa chỉ 0DC4h.
+        
+        \item \texttt{es: mov [0CF8h], 'k'} \\
+        Đặt ký tự 'k' vào địa chỉ 0CF8h.
+        
+        \item \texttt{es: mov [066Ch], 'e'} \\
+        Đặt ký tự 'e' vào địa chỉ 066Ch.
+    \end{itemize}
+    → Các ký tự "nake" sẽ được ghi tại các địa chỉ cụ thể đã được định nghĩa trong \texttt{letadd}.
+\end{enumerate}
+
+
+
+
+\subsubsection*{Làm mới và đọc dữ liệu bàn phím}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \texttt{xor cl, cl} \\
+    Xóa giá trị trong thanh ghi \texttt{CL} bằng cách thực hiện phép XOR với chính nó (tức là \texttt{CL = 0}).
+    
+    \item \texttt{xor dl, dl} \\
+    Xóa giá trị trong thanh ghi \texttt{DL} bằng cách thực hiện phép XOR với chính nó (tức là \texttt{DL = 0}).
+    
+    \item \texttt{read:} \\
+    Nhãn \texttt{read} đánh dấu nơi chương trình sẽ bắt đầu kiểm tra dữ liệu nhập từ bàn phím.
+    
+    \item \texttt{mov ah, 1} \\
+    Đặt \texttt{AH = 1} để đọc một ký tự từ bàn phím mà không cần nhấn \texttt{Enter}.
+    
+    \item \texttt{int 16h} \\
+    Gọi ngắt \texttt{16h}, yêu cầu BIOS đọc một ký tự từ bàn phím. Ký tự sẽ được lưu vào thanh ghi \texttt{AL}.
+    
+    \item \texttt{jz s1} \\
+    Kiểm tra xem thanh ghi \texttt{ZF} (Zero Flag) có được đặt không. Nếu không có phím nào được nhấn, nhảy đến nhãn \texttt{s1}.
+    
+    \item Đọc và xử lý ký tự bàn phím:
+    \begin{itemize}
+        \item \texttt{mov ah, 0} \\
+        Đặt \texttt{AH = 0} để yêu cầu ngắt \texttt{16h} đọc một ký tự từ bàn phím, nhưng lần này sẽ chờ người dùng nhấn phím và trả về kết quả trong \texttt{AL}.
+        
+        \item \texttt{int 16h} \\
+        Lại gọi ngắt \texttt{16h} để đọc ký tự bàn phím và lưu vào \texttt{AL}.
+        
+        \item \texttt{and al, 0dfh} \\
+        Sử dụng phép AND với \texttt{0DFh} để chuyển ký tự thành chữ hoa nếu đó là chữ cái thường.
+        
+        \item \texttt{mov dl, al} \\
+        Lưu ký tự đã xử lý (chữ hoa) vào thanh ghi \texttt{DL}.
+        
+        \item \texttt{jmp s1} \\
+        Nhảy đến nhãn \texttt{s1} để tiếp tục xử lý.
+    \end{itemize}
+\end{enumerate}
+
+
+
+\subsubsection*{Kiểm tra phím ESC để thoát}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \texttt{s1:} \\
+    Nhãn \texttt{s1}, nơi kiểm tra phím người dùng đã nhấn.
+    
+    \item \texttt{cmp dl, 1bh} \\
+    So sánh giá trị trong \texttt{DL} với \texttt{1Bh}, mã ASCII của phím ESC.
+    
+    \item \texttt{je ext} \\
+    Nếu người dùng nhấn phím ESC (\texttt{dl == 1bh}), nhảy đến nhãn \texttt{ext} để thoát chương trình.
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/ext.png}
+\end{figure}
+    \item \texttt{ext:} \\
+    Nhãn \texttt{ext}, được dùng làm điểm nhảy để thoát chương trình.
+    
+    \item \texttt{xor cx, cx} \\
+    Đặt thanh ghi \texttt{CX = 0}, chuẩn bị cho lệnh gọi ngắt để thao tác trên màn hình.
+    
+    \item \texttt{mov dh, 24} \\
+    Đặt \texttt{DH = 24}, dòng cuối cùng trên màn hình văn bản (0–24).
+    
+    \item \texttt{mov dl, 79} \\
+    Đặt \texttt{DL = 79}, cột cuối cùng trên màn hình (0–79).
+    
+    \item \texttt{mov bh, 7} \\
+    Đặt màu nền là 7 (xám sáng, thường là mặc định cho văn bản).
+    
+    \item \texttt{mov ax, 700h} \\
+    \texttt{AX = 0700h}, dùng để ghi ký tự (00h) với thuộc tính 07h.
+    
+    \item \texttt{int 10h} \\
+    Gọi ngắt \texttt{10h} để xóa ký tự tại vị trí chỉ định với màu sắc được đặt.
+    
+    \item \texttt{mov ax, 4c00h} \\
+    Đặt mã thoát chương trình về DOS, \texttt{4Ch} là hàm thoát, \texttt{00h} là mã trả về.
+    
+    \item \texttt{int 21h} \\
+    Gọi ngắt \texttt{21h} để thoát chương trình và trả về DOS.
+\end{enumerate}
+
+
+
+\subsubsection*{Di chuyển con rắn (hoặc các đối tượng)}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \texttt{left:} \\
+    Nhãn \texttt{left} bắt đầu kiểm tra di chuyển sang trái.
+    
+    \item \texttt{cmp dl, 'A'} \\
+    So sánh ký tự trong \texttt{DL} với chữ \texttt{'A'}. Nếu đúng, nhảy vào phần xử lý di chuyển sang trái.
+    
+    \item \texttt{jne right} \\
+    Nếu ký tự không phải \texttt{'A'}, nhảy đến nhãn \texttt{right}.
+    
+    \item \texttt{call ml} \\
+    Gọi thủ tục \texttt{ml} (có thể là thủ tục di chuyển con rắn sang trái).
+    
+    \item \texttt{mov cl, dl} \\
+    Lưu giá trị trong \texttt{DL} vào \texttt{CL} để sử dụng sau này.
+    
+    \item \texttt{jmp read} \\
+    Nhảy lại vào vòng lặp \texttt{read} để tiếp tục kiểm tra phím nhấn tiếp theo.
+
+    \item \texttt{right:} \\
+    Nhãn \texttt{right} bắt đầu kiểm tra di chuyển sang phải.
+    
+    \item \texttt{cmp dl, 'D'} \\
+    So sánh ký tự trong \texttt{DL} với chữ \texttt{'D'}. Nếu đúng, nhảy vào phần xử lý di chuyển sang phải.
+    
+    \item \texttt{jne up} \\
+    Nếu ký tự không phải \texttt{'D'}, nhảy đến nhãn \texttt{up}.
+    
+    \item \texttt{call mr} \\
+    Gọi thủ tục \texttt{mr} (di chuyển sang phải).
+    
+    \item \texttt{mov cl, dl} \\
+    Lưu giá trị trong \texttt{DL} vào \texttt{CL}.
+    
+    \item \texttt{jmp read} \\
+    Quay lại vòng lặp \texttt{read} để tiếp tục kiểm tra phím.
+
+    \item \texttt{up:} \\
+    Nhãn \texttt{up} bắt đầu kiểm tra di chuyển lên.
+    
+    \item \texttt{cmp dl, 'W'} \\
+    So sánh ký tự trong \texttt{DL} với chữ \texttt{'W'}. Nếu đúng, nhảy vào phần xử lý di chuyển lên.
+    
+    \item \texttt{jne down} \\
+    Nếu ký tự không phải \texttt{'W'}, nhảy đến nhãn \texttt{down}.
+    
+    \item \texttt{call mu} \\
+    Gọi thủ tục \texttt{mu} (di chuyển lên).
+    
+    \item \texttt{mov cl, dl} \\
+    Lưu giá trị trong \texttt{DL} vào \texttt{CL}.
+    
+    \item \texttt{jmp read} \\
+    Quay lại vòng lặp \texttt{read} để tiếp tục kiểm tra phím.
+
+    \item \texttt{down:} \\
+    Nhãn \texttt{down} bắt đầu kiểm tra di chuyển xuống.
+    
+    \item \texttt{cmp dl, 'S'} \\
+    So sánh ký tự trong \texttt{DL} với chữ \texttt{'S'}. Nếu đúng, nhảy vào phần xử lý di chuyển xuống.
+    
+    \item \texttt{jne read1} \\
+    Nếu ký tự không phải \texttt{'S'}, nhảy đến nhãn \texttt{read1}.
+    
+    \item \texttt{call md} \\
+    Gọi thủ tục \texttt{md} (di chuyển xuống).
+    
+    \item \texttt{mov cl, dl} \\
+    Lưu giá trị trong \texttt{DL} vào \texttt{CL}.
+    
+    \item \texttt{jmp read} \\
+    Quay lại vòng lặp \texttt{read} để tiếp tục kiểm tra phím.
+
+    \item \texttt{read1:} \\
+    Nhãn \texttt{read1} dùng để khôi phục giá trị của \texttt{DL} từ \texttt{CL} và tiếp tục vòng lặp đọc phím.
+    
+    \item \texttt{mov dl, cl} \\
+    Khôi phục giá trị từ \texttt{CL} vào \texttt{DL}.
+    
+    \item \texttt{jmp read} \\
+    Quay lại vòng lặp \texttt{read} để tiếp tục kiểm tra phím nhấn.
+\end{enumerate}
+
+
+\subsubsection*{Đưa rắn sang bên trái}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/ml.png}
+\end{figure}
+    \item \texttt{push dx} \\
+    Lưu giá trị của thanh ghi \texttt{DX} vào stack để bảo vệ hướng di chuyển hiện tại.
+    
+    \item \texttt{call shift\_addrs} \\
+    Gọi thủ tục \texttt{shift\_addrs} để cập nhật địa chỉ của con rắn.
+    
+    \item \texttt{sub sadd, 2} \\
+    Giảm giá trị \texttt{sadd} đi 2, tức là cập nhật địa chỉ mới cho đầu rắn (di chuyển sang trái, mỗi ô tương ứng với 2 bytes trên màn hình).
+    
+    \item \texttt{call check\_snake\_noose} \\
+    Gọi hàm \texttt{check\_snake\_noose} để kiểm tra xem con rắn có tự va vào chính mình không.
+    
+    \item \texttt{call eat} \\
+    Gọi hàm \texttt{eat} để kiểm tra xem con rắn có ăn được một ký tự (mục tiêu) hay không.
+    
+    \item \texttt{call move\_snake} \\
+    Gọi thủ tục \texttt{move\_snake} để in vị trí của con rắn trên màn hình.
+    
+    \item \texttt{pop dx} \\
+    Lấy lại giá trị của thanh ghi \texttt{DX} từ stack sau khi đã lưu trước đó.
+    
+    \item \texttt{ret} \\
+    Trở về hàm gọi nó.
+\end{enumerate}
+
+
+\subsubsection*{Đưa rắn sang bên phải}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/mr.png}
+\end{figure}
+    \item \texttt{push dx} \\
+    Lưu giá trị của thanh ghi \texttt{DX} vào stack để bảo vệ hướng di chuyển hiện tại.
+    
+    \item \texttt{call shift\_addrs} \\
+    Gọi thủ tục \texttt{shift\_addrs} để cập nhật địa chỉ của con rắn.
+    
+    \item \texttt{add sadd, 2} \\
+    Tăng giá trị \texttt{sadd} lên 2, tức là cập nhật địa chỉ mới cho đầu rắn (di chuyển sang phải, mỗi ô tương ứng với 2 bytes trên màn hình).
+    
+    \item \texttt{call check\_snake\_noose} \\
+    Gọi hàm \texttt{check\_snake\_noose} để kiểm tra xem con rắn có tự va vào chính mình không.
+    
+    \item \texttt{call eat} \\
+    Gọi hàm \texttt{eat} để kiểm tra xem con rắn có ăn được một ký tự (mục tiêu) hay không.
+    
+    \item \texttt{call move\_snake} \\
+    Gọi thủ tục \texttt{move\_snake} để in vị trí của con rắn trên màn hình.
+    
+    \item \texttt{pop dx} \\
+    Lấy lại giá trị của thanh ghi \texttt{DX} từ stack sau khi đã lưu trước đó.
+    
+    \item \texttt{ret} \\
+    Trở về hàm gọi nó.
+\end{enumerate}
+
+
+\subsubsection*{Đưa rắn lên trên}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/mu.png}
+\end{figure}
+    \item \texttt{push dx} \\
+    Lưu giá trị của thanh ghi \texttt{DX} vào stack để bảo vệ hướng di chuyển hiện tại.
+
+    \item \texttt{call shift\_addrs} \\
+    Gọi thủ tục \texttt{shift\_addrs} để cập nhật địa chỉ của con rắn.
+
+    \item \texttt{sub sadd, 160} \\
+    Giảm giá trị của \texttt{sadd} đi 160, tức là cập nhật địa chỉ mới cho đầu rắn (di chuyển lên trên, mỗi hàng trên màn hình đại diện cho 160 bytes).
+
+    \item \texttt{call check\_snake\_noose} \\
+    Gọi hàm \texttt{check\_snake\_noose} để kiểm tra xem con rắn có tự va vào chính mình không.
+
+    \item \texttt{call eat} \\
+    Gọi hàm \texttt{eat} để kiểm tra xem con rắn có ăn được một ký tự (mục tiêu) hay không.
+
+    \item \texttt{call move\_snake} \\
+    Gọi thủ tục \texttt{move\_snake} để in vị trí của con rắn trên màn hình.
+
+    \item \texttt{pop dx} \\
+    Lấy lại giá trị của thanh ghi \texttt{DX} từ stack sau khi đã lưu trước đó.
+
+    \item \texttt{ret} \\
+    Trở về hàm gọi nó.
+\end{enumerate}
+\subsubsection*{Đưa rắn đi xuống}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/md.png}
+\end{figure}
+    \item \texttt{push dx} \\
+    Lưu giá trị của thanh ghi \texttt{DX} vào stack để bảo vệ hướng di chuyển hiện tại.
+
+    \item \texttt{call shift\_addrs} \\
+    Gọi thủ tục \texttt{shift\_addrs} để cập nhật địa chỉ của con rắn.
+
+    \item \texttt{add sadd, 160} \\
+    Tăng giá trị của \texttt{sadd} lên 160, tức là cập nhật địa chỉ mới cho đầu rắn (di chuyển xuống dưới, mỗi hàng dưới màn hình đại diện cho 160 bytes).
+
+    \item \texttt{call check\_snake\_noose} \\
+    Gọi hàm \texttt{check\_snake\_noose} để kiểm tra xem con rắn có tự va vào chính mình không.
+
+    \item \texttt{call eat} \\
+    Gọi hàm \texttt{eat} để kiểm tra xem con rắn có ăn được một ký tự (mục tiêu) hay không.
+
+    \item \texttt{call move\_snake} \\
+    Gọi thủ tục \texttt{move\_snake} để in vị trí của con rắn trên màn hình.
+
+    \item \texttt{pop dx} \\
+    Lấy lại giá trị của thanh ghi \texttt{DX} từ stack sau khi đã lưu trước đó.
+
+    \item \texttt{ret} \\
+    Trở về hàm gọi nó.
+\end{enumerate}
+
+
+
+\subsubsection*{Dịch chuyển địa chỉ con rắn}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/shift_addrs.png}
+\end{figure}
+    \item \texttt{push ax} \\
+    Lưu giá trị trong thanh ghi \texttt{AX} vào stack để bảo vệ dữ liệu trong \texttt{AX} trong suốt quá trình xử lý.
+
+    \item \texttt{xor ch, ch} \\
+    Thực hiện phép \texttt{XOR} giữa \texttt{CH} và chính nó, để đặt giá trị của thanh ghi \texttt{CH} về 0. 
+    Điều này giúp đảm bảo rằng thanh ghi \texttt{CH} không chứa dữ liệu không mong muốn.
+
+    \item \texttt{xor bh, bh} \\
+    Tương tự như trên, thực hiện phép \texttt{XOR} với \texttt{BH}, đặt giá trị của thanh ghi \texttt{BH} về 0.
+
+    \item \texttt{mov cl, snakel} \\
+    Tạo giá trị cho thanh ghi \texttt{CL} bằng chiều dài của con rắn (\texttt{snakel}), cho biết số phần tử trong mảng chứa vị trí của con rắn.
+
+    \item \texttt{inc cl} \\
+    Tăng giá trị của thanh ghi \texttt{CL} lên 1, vì mảng \texttt{sadd[]} chứa một phần tử cho đầu rắn, nên phải cộng thêm 1 vào chiều dài.
+
+    \item \texttt{mov al, 2} \\
+    Gán giá trị 2 cho thanh ghi \texttt{AL}, giá trị này sẽ được nhân với \texttt{CL} trong phép toán tiếp theo.
+
+    \item \texttt{mul cl} \\
+    Thực hiện phép nhân \texttt{AL * CL}, kết quả được lưu vào thanh ghi \texttt{AX}. Kết quả này sẽ giúp xác định các vị trí trong mảng \texttt{sadd[]}.
+
+    \item \texttt{mov bl, al} \\
+    Lưu giá trị của \texttt{AL} vào thanh ghi \texttt{BL}, thanh ghi \texttt{BL} sẽ chứa độ dài của con rắn (số phần tử).
+
+    \item \texttt{shiftsnake:} \\
+    Đây là nhãn bắt đầu vòng lặp để di chuyển từng phần tử trong mảng \texttt{sadd[]}.
+    
+    \item \texttt{mov dx, sadd[bx-2]} \\
+    Lấy phần tử trước đó trong mảng \texttt{sadd[]} (lùi về 2 byte) và lưu vào thanh ghi \texttt{DX}. Phần tử này sẽ được dịch chuyển về sau.
+
+    \item \texttt{mov sadd[bx], dx} \\
+    Gán giá trị trong \texttt{DX} vào vị trí hiện tại trong mảng \texttt{sadd[bx]}.
+
+    \item \texttt{sub bx, 2} \\
+    Giảm giá trị của \texttt{BX} đi 2 đơn vị (2 byte) để trỏ đến phần tử trước trong mảng \texttt{sadd[]}.
+
+    \item \texttt{loop shiftsnake} \\
+    Nếu giá trị của \texttt{CX} chưa về 0, vòng lặp sẽ quay lại nhãn \texttt{shiftsnake} và tiếp tục dịch chuyển các phần tử trong mảng \texttt{sadd[]}. 
+
+    \item \texttt{pop ax} \\
+    Lấy lại giá trị của thanh ghi \texttt{AX} từ stack, khôi phục giá trị ban đầu.
+
+    \item \texttt{ret} \\
+    Quay lại hàm gọi thủ tục này.
+\end{enumerate}
+
+
+
+\subsubsection*{Kiểm tra nếu rắn tự chạm vào chính mình}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+     \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/check-snake-noose.png}
+\end{figure}
+    \item \texttt{push ax / push cx} \\
+    Lưu giá trị của các thanh ghi \texttt{AX} và \texttt{CX} vào stack để có thể khôi phục lại sau khi thủ tục hoàn thành.
+
+    \item \texttt{xor si, si / xor dx, dx} \\
+    Dùng phép \texttt{XOR} để xóa giá trị trong các thanh ghi \texttt{SI} và \texttt{DX}, chuẩn bị cho việc sử dụng sau này.
+
+    \item \texttt{mov ax, sadd[0\_h]} \\
+    Lấy tọa độ của đầu rắn (tọa độ đầu tiên trong mảng \texttt{sadd[]}) vào thanh ghi \texttt{AX}.
+
+    \item \texttt{mov si, 2\_h} \\
+    Bắt đầu kiểm tra từ phần tử thứ hai của mảng \texttt{sadd[]}, vì phần tử đầu tiên là đầu rắn.
+
+    \item \texttt{mov cl, snakel} \\
+    Lấy chiều dài của con rắn (\texttt{snakel}) để sử dụng làm bộ đếm cho vòng lặp kiểm tra va chạm.
+
+    \item \texttt{check\_snake\_noose\_loop:} \\
+    Nhãn bắt đầu vòng lặp để kiểm tra va chạm giữa đầu rắn và thân.
+
+    \item \texttt{cmp ax, sadd[si]} \\
+    So sánh tọa độ của đầu rắn với tọa độ của phần tử hiện tại trong thân (\texttt{sadd[]}).
+
+    \item \texttt{jz snake\_noose\_game\_over} \\
+    Nếu tọa độ đầu rắn trùng với một phần tử trong thân (va chạm), nhảy đến nhãn \texttt{snake\_noose\_game\_over} để xử lý va chạm.
+
+    \item \texttt{add si, 2\_h} \\
+    Tăng chỉ số \texttt{SI} lên 2 (mỗi phần tử trong \texttt{sadd[]} chiếm 2 byte) để kiểm tra phần tử tiếp theo.
+
+    \item \texttt{loop check\_snake\_noose\_loop} \\
+    Giảm thanh ghi \texttt{CL} và quay lại nhãn \texttt{check\_snake\_noose\_loop} nếu \texttt{CL} không bằng 0.
+
+    \item \texttt{jmp end\_check\_snake\_noose} \\
+    Nếu không có va chạm nào xảy ra, nhảy đến nhãn \texttt{end\_check\_snake\_noose} để kết thúc kiểm tra.
+
+    \item \texttt{snake\_noose\_game\_over:} \\
+    Nhãn xử lý khi rắn tự va vào thân.
+
+    \item \texttt{xor bh, bh / mov bl, hlth} \\
+    Xóa giá trị trong thanh ghi \texttt{BH} và gán giá trị \texttt{HLTH} (số máu hiện tại) vào thanh ghi \texttt{BL}.
+
+    \item \texttt{es: mov [bx+10], 0} \\
+    Xóa hiển thị máu tại vùng nhớ liên quan đến HUD (giao diện người dùng).
+
+    \item \texttt{mov hlths[bx+2], 0} \\
+    Xóa dữ liệu máu trong mảng \texttt{hlths[]}.
+
+    \item \texttt{sub hlth, 2} \\
+    Giảm máu của con rắn đi 2 đơn vị vì rắn va chạm với chính mình.
+
+    \item \texttt{cmp hlth, 0 / jnz rest\_by\_noose} \\
+    So sánh số máu còn lại của con rắn. Nếu máu còn, nhảy đến \texttt{rest\_by\_noose} để tiếp tục chơi.
+
+    \item \texttt{call game\_over} \\
+    Nếu máu còn lại bằng 0, gọi thủ tục \texttt{game\_over} để kết thúc trò chơi.
+
+    \item \texttt{rest\_by\_noose:} \\
+    Nhãn xử lý nếu con rắn còn máu và có thể tiếp tục chơi.
+
+    \item \texttt{call restart} \\
+    Gọi thủ tục \texttt{restart} để khởi động lại trò chơi.
+
+    \item \texttt{end\_check\_snake\_noose:} \\
+    Nhãn kết thúc quá trình kiểm tra va chạm giữa đầu rắn và thân.
+
+    \item \texttt{pop cx / pop ax} \\
+    Khôi phục lại giá trị của các thanh ghi \texttt{CX} và \texttt{AX} từ stack.
+
+    \item \texttt{ret} \\
+    Trả về từ thủ tục và tiếp tục thực thi các đoạn mã gọi thủ tục này.
+\end{enumerate}
+\subsubsection*{Di chuyển rắn trên màn hình console}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/move-snake.png}
+\end{figure}
+    \item \texttt{xor ch, ch} \\
+    Đặt thanh ghi \texttt{CH} = 0, chuẩn bị sử dụng \texttt{CX} làm bộ đếm. Phần thấp của \texttt{CL} sẽ chứa độ dài của rắn.
+    
+    \item \texttt{xor si, si} \\
+    Đặt \texttt{SI} = 0, dùng làm chỉ số truy cập mảng địa chỉ màn hình \texttt{sadd[]}.
+    
+    \item \texttt{xor dl, dl} \\
+    Đặt \texttt{DL} = 0, chuẩn bị lưu ký tự thân rắn từ mảng \texttt{snake[]}.
+    
+    \item \texttt{mov cl, snakel} \\
+    Tải độ dài của rắn vào \texttt{CL}, dùng làm bộ đếm cho vòng lặp.
+
+    \item \texttt{xor bx, bx} \\
+    Đặt \texttt{BX} = 0, dùng làm chỉ số để duyệt qua mảng ký tự rắn \texttt{snake[]}.
+    
+    \item \texttt{l1mr:} \\
+    Nhãn bắt đầu vòng lặp.
+
+    \item \texttt{mov di, sadd[si]} \\
+    Lấy địa chỉ màn hình (vị trí của một phần rắn) từ mảng \texttt{sadd[]} và lưu vào \texttt{DI}.
+    
+    \item \texttt{mov dl, snake[bx]} \\
+    Lấy ký tự tương ứng trong thân rắn từ mảng \texttt{snake[]} và lưu vào \texttt{DL}.
+    
+    \item \texttt{es: mov [di], dl} \\
+    Ghi ký tự trong \texttt{DL} lên địa chỉ màn hình tại \texttt{ES:[DI]}.
+
+    \item \texttt{add si, 2} \\
+    Tăng giá trị của \texttt{SI} thêm 2 (mỗi địa chỉ trong \texttt{sadd[]} chiếm 2 byte).
+
+    \item \texttt{inc bx} \\
+    Tăng giá trị của \texttt{BX} để lấy ký tự tiếp theo trong mảng \texttt{snake[]}.
+    
+    \item \texttt{loop l1mr} \\
+    Giảm giá trị của \texttt{CL} và nếu \texttt{CL} không bằng 0, quay lại nhãn \texttt{l1mr} để tiếp tục vòng lặp.
+    
+    \item \texttt{mov di, sadd[si]} \\
+    Sau vòng lặp, lấy địa chỉ tiếp theo (đuôi cũ của rắn).
+
+    \item \texttt{es: mov [di], 0} \\
+    Ghi giá trị 0 vào địa chỉ màn hình đó để xóa đuôi rắn cũ.
+
+    \item \texttt{ret} \\
+    Kết thúc thủ tục và quay lại chương trình gọi.
+\end{enumerate}
+
+\subsubsection*{Kiểm tra Logic Ăn Chữ}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+        \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/eat.png}
+\end{figure}
+    \item \texttt{Khởi tạo và lưu các giá trị ban đầu}
+    \begin{itemize}
+        \item \texttt{push ax}: Lưu giá trị của thanh ghi AX vào stack để có thể khôi phục sau khi thủ tục kết thúc.
+        \item \texttt{push cx}: Lưu giá trị của thanh ghi CX vào stack.
+    \end{itemize}
+
+    \item \texttt{Bắt đầu kiểm tra vị trí rắn trên màn hình}
+    \begin{itemize}
+        \item \texttt{mov di, sadd}: Đặt DI trỏ tới mảng \texttt{sadd[]}, mảng này chứa các địa chỉ của các vị trí con rắn trên màn hình.
+        \item \texttt{es: cmp [di], 0}: So sánh giá trị tại địa chỉ DI với 0, kiểm tra nếu đó là vị trí trống (dấu hiệu kết thúc con rắn).
+        \item \texttt{jz no}: Nếu là vị trí trống, nhảy đến nhãn \texttt{no} (rắn không ăn được gì).
+    \end{itemize}
+
+    \item \texttt{Kiểm tra rắn có va phải tường không}
+    \begin{itemize}
+        \item \texttt{es: cmp [di], 20h}: So sánh với mã ASCII 20h (dấu cách, nghĩa là tường).
+        \item \texttt{jz wall}: Nếu con rắn va phải tường (giá trị là 20h), nhảy đến nhãn \texttt{wall}.
+    \end{itemize}
+
+    \item \texttt{Kiểm tra rắn có va phải ký tự gì không (kiểm tra chữ cái)}
+    \begin{itemize}
+        \item \texttt{xor ch, ch}: Đặt \texttt{CH} = 0, chuẩn bị để sử dụng \texttt{CX} cho vòng lặp.
+        \item \texttt{mov cl, letnum}: Đặt \texttt{CL} bằng số lượng chữ cái cần ăn.
+        \item \texttt{xor si, si}: Đặt \texttt{SI} = 0, dùng làm chỉ số để kiểm tra các địa chỉ trong mảng \texttt{letadd[]} (mảng chứa các địa chỉ của chữ cái).
+    \end{itemize}
+
+    \item \texttt{Kiểm tra va chạm với các chữ cái trên màn hình}
+    \begin{itemize}
+        \item \texttt{lop::}: Nhãn bắt đầu vòng lặp kiểm tra các chữ cái.
+        \item \texttt{cmp di, letadd[si]}: So sánh địa chỉ hiện tại DI với các địa chỉ chứa các ký tự chữ cái.
+        \item \texttt{jz addf}: Nếu trùng, nhảy đến nhãn \texttt{addf} (con rắn ăn được chữ cái).
+        \item \texttt{add si, 2}: Tăng SI lên để kiểm tra chữ cái tiếp theo.
+        \item \texttt{loop lop}: Giảm CL và tiếp tục vòng lặp nếu CL còn lớn hơn 0.
+    \end{itemize}
+
+    \item \texttt{Nếu không ăn được chữ cái, kiểm tra lại}
+    \begin{itemize}
+        \item \texttt{jmp wall}: Nếu không ăn được chữ cái nào, nhảy đến kiểm tra va chạm với tường.
+    \end{itemize}
+
+    \item \texttt{Thêm ký tự vào cuối con rắn}
+    \begin{itemize}
+        \item \texttt{addf::}: Nhãn xử lý khi con rắn ăn được chữ cái.
+        \item \texttt{mov letadd[si], 0}: Xóa địa chỉ của ký tự đó khỏi mảng \texttt{letadd[]}.
+        \item \texttt{xor bh, bh}: Đặt BH = 0, chuẩn bị cho việc thao tác với mảng \texttt{snake[]}.
+        \item \texttt{mov bl, snakel}: Đặt BL bằng chiều dài hiện tại của con rắn.
+        \item \texttt{es: mov dl, [di]}: Lấy giá trị ký tự tại địa chỉ DI (ký tự con rắn ăn được).
+        \item \texttt{mov snake[bx], dl}: Ghi ký tự vào mảng \texttt{snake[]} tại vị trí BX.
+        \item \texttt{es: mov [di], 0}: Xóa ký tự tại địa chỉ DI trong mảng \texttt{sadd[]}.
+        \item \texttt{add snakel, 1}: Tăng chiều dài con rắn lên 1 đơn vị.
+        \item \texttt{sub fin, 1}: Giảm số lượng chữ cái cần ăn đi 1.
+        \item \texttt{cmp fin, 0}: So sánh xem còn chữ cái nào không.
+        \item \texttt{jz chkletters}: Nếu không còn chữ cái nào, nhảy đến kiểm tra xem thứ tự chữ cái trong con rắn đã đúng chưa.
+        \item \texttt{jmp no}: Nếu còn chữ cái, nhảy đến nhãn \texttt{no} và tiếp tục.
+    \end{itemize}
+
+    \item \texttt{Kiểm tra va chạm với tường}
+    \begin{itemize}
+        \item \texttt{wall::}: Nhãn xử lý khi con rắn va phải tường.
+        \item \texttt{cmp di, 320}: Kiểm tra xem liệu DI có nằm trong khu vực trên cùng của màn hình (2 hàng đầu) hay không.
+        \item \texttt{jbe wallk}: Nếu DI nhỏ hơn hoặc bằng 320, nhảy đến nhãn \texttt{wallk}.
+        \item \texttt{cmp di, 3840}: Kiểm tra xem liệu DI có nằm trong khu vực dưới cùng của màn hình (2 hàng cuối) hay không.
+        \item \texttt{jae wallk}: Nếu DI lớn hơn hoặc bằng 3840, nhảy đến nhãn \texttt{wallk}.
+    \end{itemize}
+
+    \item \texttt{Kiểm tra va chạm với cột đầu và cột cuối}
+    \begin{itemize}
+        \item \texttt{mov ax, di}: Lưu giá trị của DI vào AX để thực hiện phép chia.
+        \item \texttt{mov bl, 160}: Đặt BL = 160 (số cột trên màn hình).
+        \item \texttt{div bl}: Chia AX cho 160 để lấy chỉ số cột và kiểm tra.
+        \item \texttt{cmp ah, 0}: Kiểm tra phần dư (chỉ số cột), xem có phải là cột đầu hoặc cột cuối không.
+        \item \texttt{jz wallk}: Nếu phần dư bằng 0, nhảy đến nhãn \texttt{wallk}.
+    \end{itemize}
+
+    \item \texttt{Xử lý khi con rắn va chạm với tường}
+    \begin{itemize}
+        \item \texttt{wallk::}: Nhãn xử lý khi va chạm tường.
+        \item \texttt{xor bh, bh}: Đặt BH = 0, chuẩn bị thao tác với mảng \texttt{hlths[]}.
+        \item \texttt{sub hlth, 2}: Giảm số lượng máu đi 2 đơn vị do va chạm.
+        \item \texttt{cmp hlth, 0}: Kiểm tra xem máu còn lại là bao nhiêu.
+        \item \texttt{jnz rest}: Nếu còn máu, nhảy đến nhãn \texttt{rest} để reset trò chơi.
+        \item \texttt{call game\_over}: Gọi thủ tục kết thúc trò chơi nếu hết máu.
+    \end{itemize}
+
+    \item \texttt{Reset trò chơi hoặc kết thúc}
+    \begin{itemize}
+        \item \texttt{rest::}: Nhãn xử lý khi reset lại trò chơi.
+        \item \texttt{call restart}: Gọi thủ tục khởi động lại trò chơi.
+    \end{itemize}
+
+    \item \texttt{Không có va chạm, tiếp tục}
+    \begin{itemize}
+        \item \texttt{no::}: Nhãn xử lý khi không có va chạm.
+        \item \texttt{ret}: Kết thúc thủ tục và quay lại chương trình gọi.
+    \end{itemize}
+\end{enumerate}
+
+
+
+
+\subsection*{Các Thủ Tục Hỗ Trợ}
+ \subsubsection* {DATA: Khai báo các mảng và giá trị dùng trong chương trình.}
+ \begin{enumerate}[label=\textbf{\arabic*.}]
+   \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/data.png}
+\end{figure}
+    \item \texttt{main1}: Tên nhóm.
+    \begin{itemize}
+        \item Đây là thủ tục hiển thị tên nhóm hoặc thông tin về trò chơi, ví dụ như tên của các thành viên trong nhóm.
+    \end{itemize}
+    
+    \item \texttt{main2 → main4}: Hướng dẫn luật chơi và cách điều khiển.
+    \begin{itemize}
+        \item Các thủ tục này sẽ cung cấp hướng dẫn chi tiết về cách chơi trò chơi và cách sử dụng các phím điều khiển (W, S, D, A).
+    \end{itemize}
+    
+    \item \texttt{main5 → main8}: Chức năng từng phím (W, S, D, A).
+    \begin{itemize}
+        \item Các thủ tục này xử lý các chức năng của từng phím điều khiển:
+        \begin{itemize}
+            \item \texttt{W}: Di chuyển lên.
+            \item \texttt{S}: Di chuyển xuống.
+            \item \texttt{D}: Di chuyển sang phải.
+            \item \texttt{A}: Di chuyển sang trái.
+        \end{itemize}
+    \end{itemize}
+
+    \item \texttt{main9}: Mô tả ký hiệu đầu rắn.
+    \begin{itemize}
+        \item Đây là thủ tục mô tả ký hiệu dùng để hiển thị đầu rắn trên màn hình (ví dụ, ký tự đặc biệt hoặc hình ảnh).
+    \end{itemize}
+
+    \item \texttt{main10}: Yêu cầu người chơi nhấn phím bất kỳ để bắt đầu.
+    \begin{itemize}
+        \item Thủ tục này yêu cầu người chơi nhấn một phím bất kỳ để bắt đầu trò chơi.
+    \end{itemize}
+
+    \item \texttt{hlths db "Lives:", 3, 3, 3}: Mảng hiển thị số mạng còn lại.
+    \begin{itemize}
+        \item Đây là mảng dùng để hiển thị dòng "Lives:" trên màn hình.
+        \item Các ký tự \texttt{3} trong mảng này tương ứng với biểu tượng trái tim  trong mã ASCII mở rộng, đại diện cho số mạng còn lại của người chơi.
+        \item Mỗi trái tim tương ứng với một đơn vị máu.
+    \end{itemize}
+
+    \item \texttt{letadd}: Mảng chứa địa chỉ hiển thị của 4 ký tự (n, a, k, e) trên màn hình.
+    \begin{itemize}
+        \item Mảng \texttt{letadd[]} chứa các địa chỉ của các ký tự cần hiển thị trên màn hình, chẳng hạn như các ký tự "n", "a", "k", "e" để tạo thành từ "nake".
+    \end{itemize}
+
+    \item \texttt{dletadd}: Lưu bản sao ban đầu của \texttt{letadd} để dùng khi khởi động lại game (restart).
+    \begin{itemize}
+        \item Mảng \texttt{dletadd[]} lưu trữ bản sao của \texttt{letadd[]} để khi khởi động lại trò chơi (restart), các ký tự có thể được khôi phục.
+    \end{itemize}
+
+    \item \texttt{letnum}: Tổng số ký tự phải ăn.
+    \begin{itemize}
+        \item Biến này lưu tổng số ký tự mà con rắn cần ăn để hoàn thành nhiệm vụ trong trò chơi, ví dụ 4 ký tự "n", "a", "k", "e".
+    \end{itemize}
+
+    \item \texttt{fin}: Số ký tự còn lại chưa ăn.
+    \begin{itemize}
+        \item Biến \texttt{fin} lưu trữ số lượng ký tự còn lại mà con rắn cần ăn. Sau mỗi lần ăn thành công, giá trị này sẽ giảm dần.
+    \end{itemize}
+
+\end{enumerate}
+
+
+\subsubsection*{Border}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+     \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/border.png}
+\end{figure}
+    \item \texttt{} Vẽ khung game.
+    \begin{itemize}
+        \item \texttt{mov ah,0}: Chọn hàm chức năng 0 của ngắt 10h để đặt chế độ hiển thị.
+        \item \texttt{mov al,3}: Chế độ 3 - văn bản với 80 cột và 25 dòng, hỗ trợ 16 màu.
+        \item \texttt{int 10h}: Gọi BIOS để áp dụng chế độ hiển thị.
+        \item \textbf{Giải thích}: Thiết lập màn hình về chế độ văn bản chuẩn với 80 cột, 25 dòng.
+    \end{itemize}
+
+    \item \texttt{mov ah,6}: Chọn hàm chức năng 6 của INT 10h: \textit{Scroll window up} (trượt cửa sổ lên).
+    \begin{itemize}
+        \item \texttt{mov al,0}: Số dòng cuộn = 0 (không cuộn, chỉ tô màu).
+        \item \texttt{mov bh,0ffh}: Màu nền và chữ: 0FFh (màu trắng nền đen - tùy cấu hình).
+        \item \textbf{Giải thích}: Cấu hình để vẽ "khung" bằng cách tô màu vùng cụ thể trên màn hình mà không cuộn.
+    \end{itemize}
+    
+    \item \texttt{Vẽ các cột theo}: Đoạn mã dưới đây xử lý việc vẽ các cột khung.
+    \begin{itemize}
+        \item \texttt{mov ch, xx}: Hàng bắt đầu.
+        \item \texttt{mov cl, xx}: Cột bắt đầu (cột cuối màn hình).
+        \item \texttt{mov dh, xx}: Hàng kết thúc.
+        \item \texttt{mov dl, xx}: Cột kết thúc.
+        \item \texttt{int 10h}: Gọi ngắt để vẽ các cột từ vị trí bắt đầu đến kết thúc.
+    \end{itemize}
+
+\end{enumerate}
+
+
+\subsubsection*{Restart}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/restart.png}
+\end{figure}
+    \item \texttt{}Đặt lại trạng thái game sau khi thua.
+    
+    \begin{itemize}
+        \item \texttt{restart proc}: Bắt đầu định nghĩa thủ tục \texttt{restart}, dùng để khởi động lại trạng thái trò chơi.
+        \item \texttt{xor ch, ch}: Đặt thanh ghi CH = 0, chuẩn bị cho vòng lặp xóa thân rắn.
+        \item \texttt{xor si, si}: Đặt thanh ghi SI = 0, dùng làm chỉ số trong mảng \texttt{sadd}.
+        \item \texttt{mov cl, snakel}: Đặt chiều dài hiện tại của rắn vào CL để xác định số vòng lặp.
+        \item \texttt{inc cl}: Tăng độ dài thêm 1 để bao gồm cả đầu rắn.
+        \item \texttt{delt}: Nhãn bắt đầu vòng lặp để xóa thân rắn trên màn hình.
+        \item \texttt{mov di, sadd[si]}: Đọc địa chỉ của phần tử rắn từ mảng \texttt{sadd} vào DI.
+        \item \texttt{es: mov [di], 0}: Xóa ký tự tại vị trí tương ứng trên màn hình.
+        \item \texttt{add si, 2}: Di chuyển đến phần tử tiếp theo trong mảng \texttt{sadd}.
+        \item \texttt{loop delt}: Giảm CX và lặp lại nếu CX chưa bằng 0.
+    \end{itemize}
+    
+    \item \texttt{mov fin, 4}: Đặt lại số lượng chữ cái cần ăn là 4.
+    \item \texttt{mov sadd, 07D2h}: Đặt lại địa chỉ ban đầu của phần tử đầu tiên trong mảng \texttt{sadd}.
+    \item \texttt{mov cl, snakel}: Nạp lại độ dài của rắn vào CL.
+    \item \texttt{inc cl}: Tăng CL thêm 1 để bao gồm cả đầu rắn.
+    \item \texttt{xor si, si}: Đặt SI = 0, dùng làm chỉ số cho \texttt{snake}.
+    \item \texttt{inc si}: Bỏ qua đầu rắn, bắt đầu từ phần thân.
+    \item \texttt{xor di, di}: Đặt DI = 0, chỉ số cho \texttt{sadd}.
+    \item \texttt{add di, 2}: Bỏ qua phần tử đầu tiên của \texttt{sadd}.
+    \item \texttt{emptsn}: Nhãn bắt đầu vòng lặp để làm trống mảng \texttt{snake} và \texttt{sadd}.
+    \begin{itemize}
+        \item \texttt{mov snake[si], 0}: Xóa ký tự ở vị trí SI trong mảng \texttt{snake}.
+        \item \texttt{mov sadd[di], 0}: Xóa địa chỉ tương ứng ở DI trong mảng \texttt{sadd}.
+        \item \texttt{add di, 2}: Chuyển đến địa chỉ tiếp theo trong \texttt{sadd}.
+        \item \texttt{inc si}: Tăng chỉ số SI để truy cập phần tử tiếp theo trong \texttt{snake}.
+        \item \texttt{loop emptsn}: Giảm CX và lặp lại nếu chưa hết độ dài.
+    \end{itemize}
+    
+    \item \texttt{mov snakel, 1}: Đặt lại độ dài rắn chỉ còn 1 (chỉ có đầu rắn).
+    \item \texttt{xor ch, ch}: Đặt lại CH = 0, chuẩn bị cho vòng lặp reset chữ cái.
+    \item \texttt{mov cl, letnum}: Đặt số lượng chữ cái đang có vào CL.
+    \item \texttt{xor si, si}: Đặt SI = 0, chỉ số cho mảng \texttt{letadd}.
+    \item \texttt{reslet}: Nhãn bắt đầu vòng lặp khôi phục lại địa chỉ chữ cái.
+    \begin{itemize}
+        \item \texttt{mov bx, dletadd[si]}: Lấy địa chỉ ban đầu từ mảng \texttt{dletadd}.
+        \item \texttt{mov letadd[si], bx}: Gán địa chỉ đó lại cho mảng \texttt{letadd}.
+        \item \texttt{add si, 2}: Di chuyển đến phần tử tiếp theo (mỗi địa chỉ chiếm 2 byte).
+        \item \texttt{add bx, 2}: Dịch địa chỉ chữ cái để tránh bị trùng chỗ cũ.
+        \item \texttt{loop reslet}: Giảm CX và lặp lại nếu chưa đủ chữ cái.
+    \end{itemize}
+    
+    \item \texttt{xor si, si}: Đặt lại SI = 0.
+    \item \texttt{mov snake[si], 'S'}: Đặt ký tự 'S' vào phần đầu rắn (khởi tạo lại).
+    \item \texttt{jmp startag}: Nhảy đến nhãn \texttt{startag} để bắt đầu lại trò chơi.
+    \item \texttt{endp}: Kết thúc thủ tục \texttt{restart}.
+\end{enumerate}
+
+\subsubsection*{Chkletters}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/chkletters.png}
+\end{figure}
+    \item \texttt{} Kiểm tra chữ cái trong mảng \texttt{snake}.
+
+    \begin{itemize}
+        \item \texttt{call move\_snake}: Gọi hàm di chuyển con rắn.
+        \item \texttt{cmp snake[1], 'n'}: So sánh ký tự thứ 2 trong mảng \texttt{snake} với ký tự 'n'.
+        \item \texttt{jnz endtestl}: Nếu khác 'n' (jump if not zero), nhảy đến nhãn \texttt{endtestl}.
+        \item \texttt{cmp snake[2], 'a'}: So sánh ký tự thứ 3 trong mảng \texttt{snake} với 'a'.
+        \item \texttt{jnz endtestl}: Nếu khác 'a', nhảy đến \texttt{endtestl}.
+        \item \texttt{cmp snake[3], 'k'}: So sánh ký tự thứ 4 trong mảng \texttt{snake} với 'k'.
+        \item \texttt{jnz endtestl}: Nếu khác 'k', nhảy đến \texttt{endtestl}.
+        \item \texttt{cmp snake[4], 'e'}: So sánh ký tự thứ 5 trong mảng \texttt{snake} với 'e'.
+        \item \texttt{jnz endtestl}: Nếu khác 'e', nhảy đến \texttt{endtestl}.
+        \item \texttt{call win}: Nếu tất cả các so sánh đúng, gọi hàm thắng.
+    \end{itemize}
+    
+    \item \texttt{endtestl}: Nhãn đánh dấu kết thúc phần kiểm tra chuỗi.
+    
+    \begin{itemize}
+        \item \texttt{xor bh, bh}: Xóa thanh ghi BH (đặt bằng 0).
+        \item \texttt{mov bl, hlth}: Đưa giá trị biến \texttt{hlth} vào \texttt{BL}.
+        \item \texttt{es: mov [bx+10], 0}: Gán 0 vào ô nhớ tại địa chỉ \texttt{ES:BX+10}.
+        \item \texttt{mov hlths[bx+2], 0}: Gán 0 vào ô nhớ \texttt{hlths} tại vị trí \texttt{BX+2}.
+        \item \texttt{sub hlth, 2}: Trừ 2 vào biến \texttt{hlth}.
+        \item \texttt{cmp hlth, 0}: So sánh \texttt{hlth} với 0.
+        \item \texttt{jnz restc}: Nếu \texttt{hlth} khác 0, nhảy đến nhãn \texttt{restc}.
+        \item \texttt{call game\_over}: Nếu \texttt{hlth} bằng 0, gọi hàm game over.
+    \end{itemize}
+    
+    \item \texttt{restc}: Nhãn cho phần tiếp theo.
+    
+    \begin{itemize}
+        \item \texttt{call restart}: Gọi hàm \texttt{restart} để bắt đầu lại trò chơi.
+    \end{itemize}
+    
+    \item \texttt{endp}: Kết thúc thủ tục \texttt{Chkletters}.
+\end{enumerate}
+
+
+\subsubsection*{Win}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/win.png}
+\end{figure}
+    \item \texttt{} Thủ tục xử lý khi người chơi thắng.
+    
+    \begin{itemize}
+        \item \texttt{call clearall}: Gọi hàm xóa toàn bộ màn hình.
+        \item \texttt{call border}: Gọi hàm vẽ khung viền màn hình.
+        \item \texttt{mov di, 7cah}: Đặt con trỏ màn hình tại vị trí 7CAh để in chữ "chiến thắng".
+        \item \texttt{lea si, gmwin}: Đưa địa chỉ chuỗi \texttt{gmwin} vào thanh ghi \texttt{SI}.
+        \item \texttt{mov cx, 5}: Đặt số lượng ký tự cần in là 5.
+        
+        \item \texttt{print\_win\_message}: Nhãn bắt đầu vòng lặp in từng ký tự trong chuỗi \texttt{gmwin}.
+        
+        \begin{itemize}
+            \item \texttt{mov al, [si]}: Lấy ký tự hiện tại từ chuỗi \texttt{gmwin}.
+            \item \texttt{mov ah, 02h}: Đặt mã màu chữ là xanh.
+            \item \texttt{es: mov [di], ax}: Ghi ký tự và màu vào bộ nhớ màn hình tại vị trí \texttt{DI}.
+            \item \texttt{inc si}: Tăng \texttt{SI} để trỏ tới ký tự tiếp theo.
+            \item \texttt{add di, 2}: Tăng \texttt{DI} lên 2 để đến ô màn hình tiếp theo.
+            \item \texttt{loop print\_win\_message}: Giảm \texttt{CX} và lặp lại nếu \texttt{CX} chưa bằng 0.
+        \end{itemize}
+
+        \item \texttt{mov di, 862h}: Đặt con trỏ màn hình tại vị trí 862h để in chuỗi \texttt{endtxt}.
+        \item \texttt{lea si, endtxt}: Đưa địa chỉ chuỗi \texttt{endtxt} vào \texttt{SI}.
+        \item \texttt{mov cx, 16}: Đặt số lượng ký tự cần in là 16.
+
+        \item \texttt{print\_exit}: Nhãn bắt đầu vòng lặp in chuỗi \texttt{endtxt}.
+        
+        \begin{itemize}
+            \item \texttt{mov al, [si]}: Lấy ký tự hiện tại từ chuỗi \texttt{endtxt}.
+            \item \texttt{es: mov [di], al}: Ghi ký tự vào màn hình (không đổi màu).
+            \item \texttt{inc si}: Tăng \texttt{SI} để đến ký tự tiếp theo.
+            \item \texttt{add di, 2}: Tăng \texttt{DI} để đến ô tiếp theo trên màn hình.
+            \item \texttt{loop print\_exit}: Giảm \texttt{CX} và lặp lại nếu \texttt{CX} chưa bằng 0.
+        \end{itemize}
+        
+        \item \texttt{wait\_for\_esc}: Nhãn vòng lặp chờ người dùng nhấn phím ESC.
+        
+        \begin{itemize}
+            \item \texttt{mov ah, 7}: Chuẩn bị gọi hàm đọc ký tự từ bàn phím (ẩn ký tự).
+            \item \texttt{int 21h}: Gọi ngắt để đọc ký tự người dùng nhập.
+            \item \texttt{cmp al, 1bh}: So sánh ký tự nhập vào với mã ESC (1Bh).
+            \item \texttt{jz ext}: Nếu là ESC, nhảy đến nhãn \texttt{ext} để thoát.
+            \item \texttt{jmp wait\_for\_esc}: Nếu không phải ESC, tiếp tục chờ nhập phím.
+        \end{itemize}
+    \end{itemize}
+
+    \item \texttt{endp}: Kết thúc thủ tục \texttt{win}.
+\end{enumerate}
+
+\subsubsection*{game\_over}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+      \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{pics/game-over.png}
+\end{figure}
+    \item \texttt{}: Thủ tục xử lý khi người chơi thua.
+    
+    \begin{itemize}
+        \item \texttt{call clearall}: Gọi hàm xóa toàn bộ màn hình.
+        \item \texttt{call border}: Gọi hàm vẽ khung viền màn hình.
+        \item \texttt{mov di, 7c8h}: Đặt con trỏ màn hình tại vị trí 7C8h để in chữ "Game Over".
+        \item \texttt{lea si, gmov}: Đưa địa chỉ chuỗi \texttt{gmov} vào thanh ghi \texttt{SI}.
+        \item \texttt{mov cx, 4}: Đặt số lượng ký tự cần in là 4.
+        
+        \item \texttt{print\_game\_over}: Nhãn bắt đầu vòng lặp in từng ký tự trong chuỗi \texttt{gmov}.
+        
+        \begin{itemize}
+            \item \texttt{mov al, [si]}: Lấy ký tự hiện tại từ chuỗi \texttt{gmov}.
+            \item \texttt{mov ah, 04h}: Đặt mã màu đỏ cho ký tự.
+            \item \texttt{es: mov [di], ax}: Ghi ký tự và màu vào bộ nhớ màn hình tại vị trí \texttt{DI}.
+            \item \texttt{inc si}: Tăng \texttt{SI} để trỏ tới ký tự tiếp theo.
+            \item \texttt{add di, 2}: Tăng \texttt{DI} lên 2 để đến ô màn hình tiếp theo.
+            \item \texttt{loop print\_game\_over}: Giảm \texttt{CX} và lặp lại nếu \texttt{CX} chưa bằng 0.
+        \end{itemize}
+
+        \item \texttt{mov di, 862h}: Đặt con trỏ màn hình tại vị trí 862h để in chuỗi \texttt{endtxt}.
+        \item \texttt{lea si, endtxt}: Đưa địa chỉ chuỗi \texttt{endtxt} vào \texttt{SI}.
+        \item \texttt{mov cx, 16}: Đặt số lượng ký tự cần in là 16.
+
+        \item \texttt{print\_exit2}: Nhãn bắt đầu vòng lặp in chuỗi \texttt{endtxt}.
+        
+        \begin{itemize}
+            \item \texttt{mov al, [si]}: Lấy ký tự hiện tại từ chuỗi \texttt{endtxt}.
+            \item \texttt{es: mov [di], al}: Ghi ký tự vào màn hình (không đổi màu).
+            \item \texttt{inc si}: Tăng \texttt{SI} để đến ký tự tiếp theo.
+            \item \texttt{add di, 2}: Tăng \texttt{DI} để đến ô tiếp theo trên màn hình.
+            \item \texttt{loop print\_exit2}: Giảm \texttt{CX} và lặp lại nếu \texttt{CX} chưa bằng 0.
+        \end{itemize}
+        
+        \item \texttt{wait\_for\_esc2}: Nhãn vòng lặp chờ người dùng nhấn phím ESC.
+        
+        \begin{itemize}
+            \item \texttt{mov ah, 7}: Chuẩn bị gọi hàm đọc ký tự từ bàn phím (ẩn ký tự).
+            \item \texttt{int 21h}: Gọi ngắt để đọc ký tự người dùng nhập.
+            \item \texttt{cmp al, 1bh}: So sánh ký tự nhập vào với mã ESC (1Bh).
+            \item \texttt{jz ext}: Nếu là ESC, nhảy đến nhãn \texttt{ext} để thoát.
+            \item \texttt{jmp wait\_for\_esc2}: Nếu không phải ESC, tiếp tục chờ nhập phím.
+        \end{itemize}
+    \end{itemize}
+
+    \item \texttt{endp}: Kết thúc thủ tục \texttt{game\_over}.
+\end{enumerate}
+\subsection {Miêu tả giao diện chương trình }
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/start_console.png}
+  \caption{Giao diện khi bấm bất kỳ phím nào để bắt đầu}
+  \label{fig:start_console}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/start_game_console.png}
+  \caption{Giao diện đầu trò chơi}
+  \label{fig:start_game_console}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/lose_heart_console.png}
+  \caption{Giao diện sau khi mất tim}
+  \label{fig:lose_heart_console}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/win_console.png}
+  \caption{Giao diện khi thắng}
+  \label{fig:win_console}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{pics/lose_console.png}
+  \caption{Giao diện khi thua}
+  \label{fig:lose_console}
+\end{figure}
+\subsection{Nguồn tham khảo} 
+https://github.com/mrdavis-01/Snake-game-8086/blob/master/Eng.%20Davis%20Snake.asm
+\subsection{Source Code}
+https://github.com/long9657/snake-assembly
+\section{Tổng kết, đánh giá kết quả làm việc nhóm}
+
+\begin{tabular}{|>{\raggedright}p{4cm}|>{\centering}p{3cm}|>{\centering}p{2cm}|>{\raggedright\arraybackslash}p{6cm}|}
+\hline
+\textbf{Họ và tên} & \textbf{Mã sinh viên} & \textbf{\% Điểm} & \textbf{Khối lượng công việc} \\
+\hline
+Lê Hiển Long & B23DCCN500 & 40\% & Quản lý chính + xử lý tác vụ trò chơi \\
+\hline
+Nguyễn Thanh Bằng & B23DCCN066 & 30\% & Dựng màn kết thúc + checkletter \\
+\hline
+Nguyễn Văn Du & B23DCCN164 & 30\% & Giao diện chính \\
+\hline
+\end{tabular}
+\end{document}
